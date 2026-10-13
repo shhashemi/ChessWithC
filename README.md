@@ -2,8 +2,8 @@
 Just a project from university. That I made a chess game with C language and SDL3 library. I tried my best to not using built-in functions for drawing buttons and texts on the gui surface. 
 
 There is some diffrent rules for moving of any piece on the surface. but the check and checkmate rules are the same.
-<img src="./docs/ScrShot_1.png" alt="Chess MainPage" width="1199"/>
-<img src="./docs/ScrShot_2.png" alt="Chess Gameplay" width="1199"/>
+<img src="./ScrShot_1.png" alt="Chess MainPage" width="1199"/>
+<img src="./ScrShot_2.png" alt="Chess Gameplay" width="1199"/>
 ---
 ##The Code
 > I define a **"surface"** as a grid with a specific number of rows and columns—essentially a graphical rectangle—where the color of a pixel is assigned to each cell.

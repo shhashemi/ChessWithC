@@ -6,7 +6,7 @@ There is some diffrent rules for moving of any piece on the surface. but the che
 <img src="./ScrShot_1.png" alt="Chess MainPage" width="1199"/>
 <img src="./ScrShot_2.png" alt="Chess Gameplay" width="1199"/>
 ---
-##The Code
+## The Code
 > I define a **"surface"** as a grid with a specific number of rows and columns—essentially a graphical rectangle—where the color of a pixel is assigned to each cell.
 
 Since the application's main surface needs to be rendered continuously, I defined a `while` loop in `gui.c` where I recreated and re-initialized the surface during each iteration.
@@ -20,7 +20,7 @@ To prevent these redundant renders, I calculated the timeout duration within the
 ---
 I wrote a set of functions to place one surface onto another, or to merge two surfaces—specifically handling cases where parts of the surface being placed are transparent.
 
-###Merging two surfaces (source and destination surfaces)
+### Merging two surfaces (source and destination surfaces)
 ```
 uint32_t alpha_blend(uint32_t src, uint32_t dst) {
   uint8_t sa = src >> 24;
@@ -45,7 +45,7 @@ uint32_t alpha_blend(uint32_t src, uint32_t dst) {
 }
 ```
 
-###Placing one surface onto another
+### Placing one surface onto another
 
 > Logically, the dimensions—both length and width—of the source surface must be smaller than those of the destination surface. Since I adhered to this requirement, I did not implement error handling.
 ```
@@ -78,7 +78,7 @@ The core of the program resides in `chess_logic.c`, which defines the game's pri
 
 When calculating legal moves, I first needed to determine the total set of possible moves for a given piece. Since a move must not expose the player's own king to check, I simulated each potential move to verify whether the king would be left in check as a result.
 
-###Regular moves
+### Regular moves
 ```
 void get_regular_moves(uint8_t *moves, Piece *piece) {
   uint8_t *raw_moves = malloc(sizeof(uint8_t) * 64 * 3);
@@ -98,7 +98,7 @@ void get_regular_moves(uint8_t *moves, Piece *piece) {
 }
 ```
 
-###Simulating movement of a piece
+### Simulating movement of a piece
 ```
 int simulate_move_and_check(Piece *piece, int x, int y) {
   int is_piece_removed = 0;
